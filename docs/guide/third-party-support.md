@@ -105,12 +105,22 @@ disqus:
 
 - `apikey`: 必须，请参考 DisqusJS 文档 [配置 Disqus Application](https://github.com/SukkaW/DisqusJS#%E9%85%8D%E7%BD%AE-disqus-application)
 
+> 注释部分为非必须参数。
+
 ```yaml
 disqusjs:
   enable: false
   shortname: yunyoujun
-  count: false
-  apikey:
+  # siteName:
+  # identifier:
+  # url:
+  # title:
+  # api:
+  # apikey:
+  # nesting: 4
+  # nocomment:
+  # admin:
+  # adminLabel:
 ```
 
 ### Valine
@@ -126,6 +136,15 @@ language: zh-CN
 实际上，你只需要参考下方页面获取配置所需的 appId 和 appKey 即可。（不需要安装，主题默认使用 CDN。模版也已经内置。）
 
 > [快速开始 - 获取 APP ID 和 APP Key](https://valine.js.org/quickstart.html#%E8%8E%B7%E5%8F%96APP-ID-%E5%92%8C-APP-Key)
+
+::: warning
+
+因为国内行情，建议直接使用 [LeanCloud 国际版](https://leancloud.app/)。
+如果你打算使用国内版，你需要绑定你的自定义域名并配置下方 `serverURLs` 字段。
+
+> [请各位用户在 10 月 1 日前绑定自己的域名 | LeanCloud](https://leancloudblog.com/mandatory-domain-config/)
+
+:::
 
 - `visitor`: 文章阅读量统计（请最好不要与 [不蒜子](#busuanzi) 同时启用）
 
@@ -165,7 +184,7 @@ Valine 的扩展和增强功能可以参考 [Valine-Admin](https://github.com/De
 
 ### MiniValine
 
-A simple and minimalist comment system based on Leancloud.
+简单且简约的评论系统，基于LeanCloud。
 
 - GitHub: [MiniValine](https://github.com/MiniValine/MiniValine)
 - Demo: <https://minivaline.github.io/>
@@ -290,6 +309,7 @@ algolia_search:
 google_analytics:
   enable: true
   id: UA-XXXXXXXXX-X
+  // 注意：最近新建的谷歌分析账号ID已经修改，格式如：G-XXXXXXXXXX，可以直接填入id一项，功能正常。
 ```
 
 ### busuanzi
